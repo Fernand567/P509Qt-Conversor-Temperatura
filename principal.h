@@ -17,6 +17,10 @@ public:
 public slots:
     void cent2fahr(int i);
     void fahr2cent(int i);
+    void cent2kelv(int i);
+    void kelv2cent(int i);
+    void fahr2kelv(int i);
+    void kelv2fahr(int i);
 private:
     Ui::Principal *ui;
 };

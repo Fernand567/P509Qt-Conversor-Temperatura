@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>362</width>
-    <height>325</height>
+    <width>1308</width>
+    <height>675</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -76,6 +76,35 @@ background-color: rgb(0, 170, 127);</string>
       </layout>
      </widget>
     </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Kelvin</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLCDNumber" name="outKelv">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(211, 0, 0);</string>
+         </property>
+         <property name="value" stdset="0">
+          <double>273.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="inKelv">
+         <property name="minimum">
+          <number>255</number>
+         </property>
+         <property name="maximum">
+          <number>372</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -83,10 +112,16 @@ background-color: rgb(0, 170, 127);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>362</width>
+     <width>1308</width>
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuTemperatura">
+    <property name="title">
+     <string>Temperatura</string>
+    </property>
+   </widget>
+   <addaction name="menuTemperatura"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -123,6 +158,22 @@ background-color: rgb(0, 170, 127);</string>
     <hint type="destinationlabel">
      <x>268</x>
      <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inKelv</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outKelv</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1085</x>
+     <y>489</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>199</y>
     </hint>
    </hints>
   </connection>
